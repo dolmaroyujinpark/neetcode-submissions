@@ -25,7 +25,7 @@ jobs:
           rsync -av --delete \
             --exclude='.git' \
             --exclude='.github' \
-            source/ target/insung/
+            source/ target/yujin/
 
       - name: Get source commit message
         id: source_msg
