@@ -22,10 +22,10 @@ jobs:
 
       - name: Sync source into yujin/ folder
         run: |
-          rsync -av --delete \
+          rsync -av \
             --exclude='.git' \
             --exclude='.github' \
-            source/ target/yujin/
+            source/ target/yujin/neetcode/
 
       - name: Get source commit message
         id: source_msg
@@ -41,7 +41,7 @@ jobs:
           cd target
           git config user.name "neetcode-mirror-bot"
           git config user.email "actions@github.com"
-          git add yujin/
+          git add yujin/neetcode/
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
